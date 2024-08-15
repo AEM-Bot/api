@@ -1,12 +1,13 @@
 package main
 
 import (
-  "encoding/json"
-  "fmt"
-  "io/ioutil"
-  "net/http"
-  "net/url"
-  "strings"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"net/url"
+	"strings"
 )
 
 func getToken() (string, error) {
@@ -48,6 +49,7 @@ func getToken() (string, error) {
 }
 
 func getMboxes(w http.ResponseWriter, r *http.Request) {
+  log.Println("Received request:", r.Method, r.URL.Path)
   w.Header().Set("Access-Control-Allow-Origin", "*")
   w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
   w.Header().Set("Access-Control-Allow-Headers", "Authorization, Content-Type")
