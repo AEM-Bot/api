@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/getmboxes/main.go",
+        "use": "@vercel/go"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/getmboxes",
+        "dest": "/api/getmboxes/main.go"
+      }
+    ]
+  }
+  
